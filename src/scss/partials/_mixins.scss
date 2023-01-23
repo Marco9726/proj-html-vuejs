@@ -1,0 +1,6 @@
+@use './variables' as *;
+
+@mixin flex-between {
+	display: flex;
+	justify-content: space-between;
+}
