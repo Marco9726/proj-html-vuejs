@@ -25,7 +25,7 @@
 				<!-- sx  -->
 				<div class="col-left ">
 					<div class="my-row-between">
-						<div>
+						<div class="pe-3">
 							<i class="fa-regular fa-envelope me-1"></i>
 							<span>Superhit Top Movie </span>
 							<b class="color-green">** King Star **</b>
@@ -155,7 +155,7 @@
 					background-color: $dark;
 					outline: none;
 					caret-color: $green-primary;
-					width: 255px;
+					width: 250px;
 				}
 				button{
 					border: none;
