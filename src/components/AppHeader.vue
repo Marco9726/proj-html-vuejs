@@ -71,6 +71,28 @@
 				</div>
 			</div>
 		</section>
+		<!-- NAVBAR  -->
+		<nav class="my-container">
+			<div class="my-row-between align-items-center">
+				<ul>
+					<!-- ciclo gli item del menu  -->
+					<li v-for="(item,index) in store.menu" :key="index">
+						<a href="#">
+							<h4>
+								{{ item.name }}
+								<!-- visualizzo l'arrow solo se l'item ha un dropdwon al suo interno  -->
+								<i v-if="item.dropdownList" class="fa-solid fa-caret-down"></i>
+							</h4>
+						</a>
+
+					</li>
+				</ul>
+				<div id="cart">
+					<i class="fa-solid fa-basket-shopping"></i>
+					<span class="green-dot">0</span>
+				</div>
+			</div>
+		</nav>
 	
 	</header>
 </template>
@@ -118,6 +140,7 @@
 				}
 			}		
 		}
+
 		section{
 			border-top: $border-secondary;
 			border-bottom: $border-secondary;
@@ -132,6 +155,7 @@
 					background-color: $dark;
 					outline: none;
 					caret-color: $green-primary;
+					width: 255px;
 				}
 				button{
 					border: none;
@@ -139,9 +163,36 @@
 				}
 			}
 		}
+
+		nav{
+			ul{			
+				h4{
+					font-size: 1.2rem;
+					padding: 2rem 2.5rem 2rem 0;
+					margin-bottom: 0;
+					i{
+						font-size: 1.2rem;
+						position: relative;
+					}
+				}		
+			}
+			#cart{
+				position: relative;
+				.green-dot{
+					position: absolute;
+					top: -12px;
+					left: 7px;
+					display: inline-block;
+					height: 1.2rem;
+					width: 1.2rem;
+					background-color: $green-primary;
+					font-size: .75rem;
+					border-radius: 50%;
+					text-align: center;
+					line-height: 1.2rem;
+				}
+			}
+		}
 	}
-
-
-  
   
 </style>
