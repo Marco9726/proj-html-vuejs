@@ -11,8 +11,8 @@
 	font-size: 14px;
 }
 
-.border-grey {
-	border: $border-grey
+.border-secondary {
+	border: $border-secondary
 }
 
 .debug {
@@ -23,8 +23,8 @@
 	color: $green-primary;
 }
 
-hr {
-	margin: 0;
+.text-grey {
+	color: rgb(130, 134, 139)
 }
 
 ul {
@@ -40,7 +40,7 @@ a {
 header,
 main,
 footer {
-	background-color: $petrolium;
+	background-color: $dark;
 }
 
 .my-container {
