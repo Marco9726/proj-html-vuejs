@@ -56,7 +56,7 @@
 				<!-- row  -->
 				<div class="my-row-between mb-4">
 					<div id="logo">
-						<img src="../assets/img/cropped-logo.png" alt="logo">
+						<img src="../../public/img/cropped-logo.png" alt="logo">
 					</div>
 					<!-- searchbar  -->
 					<div id="searchbar" class="mt-4">
