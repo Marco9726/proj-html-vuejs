@@ -12,49 +12,49 @@
 			navbar: [
 				{
 					title: 'Home',
-					type: 'Dropdwon',
+					dropdown: true,
 					dropdownList: [
-						'Home',
-						'Home',
-						'Home',
-						'Home',
-						'Home',
-						'Home'
+						{ label: 'Home' },
+						{ label: 'Home 2' },
+						{ label: 'Home 3' },
+						{ label: 'Home 4' },
+						{ label: 'Home 5' },
+						{ label: 'Home 6' }
 					]
 				},
 				{
 					title: 'Celebrity',
-					type: 'Dropdwon',
+					dropdown: true,
 					dropdownList: [
-						'Celebrity',
-						'Celebrity Single'
+						{ label: 'Celebrity' },
+						{ label: 'Celebrity Single'}
 					]
 				},
 				{
 					title: 'Movie',
-					type: 'Dropdwon',
+					dropdown: true,
 					dropdownList: [
-						'Movie Post',
-						'Top Rate Movie',
-						'Movie Category',
-						'Single Movie'
+						{ label: 'Movie Post' },
+						{ label: 'Top Rate Movie' },
+						{ label: 'Movie Category' },
+						{ label: 'Single Movie '}
 					]
 				},
 				{
 					title: 'Page',
-					type: 'Dropdwon',
+					dropdown: true,
 					dropdownList: [
-						'Pricing Table',
-						'Call To Action',
-						'My Account',
-						'Cart',
-						'Checkout',
-						'Wishlist',
+						{ label: 'Pricing Table' },
+						{ label: 'Call To Action' },
+						{ label: 'My Account' },
+						{ label: 'Cart' },
+						{ label: 'Checkout' },
+						{ label: 'Wishlist' },
 					]
 				},
 				{
 					title: 'Shop',
-					type: 'Dropdwon',
+					dropdown: true,
 					dropdownList: [
 						{
 							label: 'Shop Sidebar',
@@ -75,10 +75,12 @@
 				},
 				{
 					title: 'Blog',
+					dropdown: false,
 					type: 'link'
 				},
 				{
 					title: 'Contact Us',
+					dropdown: false,
 					type: 'link'
 				}
 			],

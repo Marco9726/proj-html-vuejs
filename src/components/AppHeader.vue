@@ -86,7 +86,7 @@
 			<div class="my-row-between align-items-center">
 				<ul>
 					<!-- ciclo gli item del menu  -->
-					<li v-for="(item,index) in arraynav" :key="index">
+					<li v-for="(item,index) in arraynav" :key="index" class="nav-item">
 						<a href="#">
 							<h4>
 								{{ item.title }}
@@ -94,12 +94,37 @@
 								<i v-if="item.dropdownList" class="fa-solid fa-caret-down"></i>
 							</h4>
 						</a>
-
+						<!-- DROPDOWN, visualizzo il menu solo se la proprietà 'dropdown' dell'item risulta vera  -->
+						<div v-if="item.dropdown" class="first-dropdown dropdown-menu bg-mydark p-3">
+							<ul class="list-column my-3">
+								<!-- ciclo i dropdown-item nell'array della proprietà 'dropdownList' presente negli item del menu -->
+								<li v-for="(link,index) in item.dropdownList" :key="index">
+									<a href="#">
+										{{ link.label }}
+										<!-- visualizzo l'arrow solo se esiste un ulteriore dropdown menu  -->
+										<span v-if="link.shopMenu" class="arrow">&rsaquo;</span>
+									</a> 
+									<!-- visualizzo il secondo dropdown se esiste la proprietà 'shopmenu' nell'ultimo oggetto ciclato  -->
+									<div v-if="link.shopMenu" class="second-dropdown dropdown-menu bg-mydark p-3">
+										<ul class="list-column">
+											<!-- ciclo gli ultimi item nello shopMenu  -->
+											<li v-for="(item,index) in link.shopMenu" :key="index">
+												<a href="#">{{ item }}</a>
+											</li>
+										</ul>
+									</div>
+								</li>					
+							</ul>
+						</div>
 					</li>
 				</ul>
-				<div id="cart">
+				<div id="cart" class="ms-3">
 					<i class="fa-solid fa-basket-shopping"></i>
 					<span class="green-dot">0</span>
+					<!-- dropdown -->
+					<div class="dropdown-menu">
+						No products in the cart.
+					</div>
 				</div>
 			</div>
 		</nav>
@@ -154,6 +179,7 @@
 			border-top: $border-secondary;
 			border-bottom: $border-secondary;
 			.my-row-between{
+				// SEARCHBAR 
 				.dropdown{
 					display: inline-block;
 					#select{
@@ -185,18 +211,50 @@
 				
 			}
 		}
-
+		// NAVBAR 
 		nav{
-			ul{			
-				h4{
-					font-size: 1.2rem;
-					padding: 2rem 2.5rem 2rem 0;
-					margin-bottom: 0;
-					i{
-						font-size: 1.2rem;
-						position: relative;
+			ul{	
+				li.nav-item{
+					position: relative;
+					&:hover{
+						.first-dropdown{
+							display: block;
+						}
 					}
-				}		
+					h4{
+						font-size: 1.2rem;
+						padding: 2rem 2.5rem 2rem 0;
+						margin-bottom: 0;
+						i{
+							font-size: 1.2rem;
+							position: relative;
+						}
+					}		
+					// dropdown
+					.first-dropdown{
+						top: 70%;
+						left: -1rem;
+						li{
+							position: relative;
+							line-height: 3rem;
+							&:hover{
+								.second-dropdown{
+									display: block;
+								}
+							}
+							
+							span.arrow{
+								position: absolute;
+								right: 1px;
+								font-size: 1.25rem;
+							}
+							.second-dropdown{
+								top: 0;
+								left: 100%;
+							}
+						}
+					}
+				}
 			}
 			#cart{
 				position: relative;
@@ -212,6 +270,15 @@
 					border-radius: 50%;
 					text-align: center;
 					line-height: 1.2rem;
+				}
+				&:hover{
+					.dropdown-menu{
+						display: block;
+						padding: 35px;
+						width: 320px;
+						right: -1rem;
+						top: 50px;
+					}
 				}
 			}
 		}
