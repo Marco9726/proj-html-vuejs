@@ -3,7 +3,7 @@ import { reactive } from 'vue';
 export const store = reactive({
 	mediaCategories: [
 		{
-			name: 'All'
+			name: 'All Movie Category'
 		},
 		{
 			name: 'Coming Soon'

@@ -26,14 +26,15 @@ a {
 
 header,
 main,
-footer {
+footer,
+.bg-mydark {
 	background-color: $dark;
 }
 
 h5,
 h4,
 h2,
-button {
+button:not(#select) {
 	font-weight: 700;
 }
 

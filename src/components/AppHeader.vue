@@ -61,8 +61,22 @@
 					<!-- searchbar  -->
 					<div id="searchbar" class="mt-4">
 						<!-- select  -->
-						<input type="text" class="border-secondary p-3" placeholder="Search ...">
-						<button class="py-3 px-4">Search</button>
+						<div class="dropdown">
+							<button class="btn dropdown-toggle rounded-0 border-secondary bg-mydark py-3" type="button" id="select" data-bs-toggle="dropdown" aria-expanded="false">
+								<span>All Movie </span>       
+							</button>
+							<!-- dropdown menu  -->
+							<ul class="dropdown-menu" aria-labelledby="select">
+								<!-- creo i dropdown-item ciclando gli oggetti nell'array 'mediaCategories' del file store  -->
+								<li v-for="(item,index) in store.mediaCategories" :key="index" class="px-2">
+									<a class="dropdown-item" href="#">{{item.name}}</a>
+								</li>
+							</ul>
+						</div>
+						<!-- input  -->
+						<input type="text" class="border-secondary p-3 bg-mydark" placeholder="Search ...">
+						<!-- button  -->
+						<button class="py-3 px-4" id="search">Search</button>
 					</div>
 				</div>
 			</div>
@@ -89,7 +103,6 @@
 				</div>
 			</div>
 		</nav>
-	
 	</header>
 </template>
 
@@ -141,22 +154,35 @@
 			border-top: $border-secondary;
 			border-bottom: $border-secondary;
 			.my-row-between{
-
-				// select{
-				// 	background-color: $dark;
-				// 	color: rgb(152, 152, 152);
-					
-				// }
+				.dropdown{
+					display: inline-block;
+					#select{
+						padding-left: 2.5rem;
+						&:focus{
+							outline-style: round($number: 2);
+							outline: 1px solid $green-primary;
+						}
+						span{
+							color: rgb(160,160,160);
+							&::after{
+								content: '';
+								width: .8rem;
+								display: inline-block;
+							}
+						}
+					}
+				}
 				input{
-					background-color: $dark;
 					outline: none;
 					caret-color: $green-primary;
 					width: 250px;
+					border-left: none;
 				}
-				button{
+				#search{
 					border: none;
 					background-color: $green-primary;
 				}
+				
 			}
 		}
 
