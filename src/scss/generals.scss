@@ -30,10 +30,15 @@ footer {
 	background-color: $dark;
 }
 
+h5,
 h4,
 h2,
 button {
 	font-weight: 700;
+}
+
+p {
+	line-height: 24px;
 }
 
 // CLASSI 
@@ -65,4 +70,12 @@ button {
 
 .col-right {
 	text-align: right;
+}
+
+.font-md {
+	font-size: 1.15rem;
+}
+
+.list-column {
+	flex-direction: column;
 }

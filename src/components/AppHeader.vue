@@ -1,16 +1,12 @@
 <script>
 	import { store } from '../store'
 	export default {
+		props:{
+			arraynav: Array
+		},
 		data(){
 			return{
-				store,
-				socialIcons: [
-				"fa-brands fa-facebook-f",
-				"fa-brands fa-twitter",
-				"fa-brands fa-linkedin-in",
-				"fa-brands fa-instagram",
-				"fa-brands fa-google-plus-g"
-				]
+				store
 			}
 		}       
 	}
@@ -31,10 +27,15 @@
 							<b class="color-green">** King Star **</b>
 						</div>					
 						<ul>
-							<!-- ciclo le icone  -->
-							<li v-for="(item,index) in socialIcons" :key="index">
+							<!-- ciclo le icone nell'array presente nel file store-->
+							<li v-for="(item,index) in store.socialIcons" :key="index">
 								<a href="#">
 									<i :class="item"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa-brands fa-google-plus-g"></i>
 								</a>
 							</li>
 						</ul> 				
@@ -59,12 +60,7 @@
 					</div>
 					<!-- searchbar  -->
 					<div id="searchbar" class="mt-4">
-						<!-- <select name="select" id="select" class="text-center border-secondary">ciao
-							<option v-for="(item,index) in store.mediaCategories" :key="index" :value="item.name">
-								{{ item.name }}
-							</option>
-							
-						</select> -->
+						<!-- select  -->
 						<input type="text" class="border-secondary p-3" placeholder="Search ...">
 						<button class="py-3 px-4">Search</button>
 					</div>
@@ -76,10 +72,10 @@
 			<div class="my-row-between align-items-center">
 				<ul>
 					<!-- ciclo gli item del menu  -->
-					<li v-for="(item,index) in store.menu" :key="index">
+					<li v-for="(item,index) in arraynav" :key="index">
 						<a href="#">
 							<h4>
-								{{ item.name }}
+								{{ item.title }}
 								<!-- visualizzo l'arrow solo se l'item ha un dropdwon al suo interno  -->
 								<i v-if="item.dropdownList" class="fa-solid fa-caret-down"></i>
 							</h4>
