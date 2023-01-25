@@ -31,7 +31,9 @@ footer,
 	background-color: $dark;
 }
 
+h6,
 h5,
+h3,
 h4,
 h2,
 button:not(#select) {
@@ -92,4 +94,12 @@ p {
 
 .rounded-pill {
 	border: none;
+}
+
+.section-header {
+	padding-left: 1rem;
+	padding-bottom: .75rem;
+	border-bottom: $border-secondary;
+	border-left: 2px solid $green-primary;
+	margin-bottom: 4rem;
 }
