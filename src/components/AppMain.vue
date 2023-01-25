@@ -1,11 +1,15 @@
 <script>
-	import AppJumbotron from './AppJumbotron.vue'
+	import AppJumbotron from './AppJumbotron.vue';
+	import CardmovieList from './CardMovieList.vue';
+	import { store } from '../store';
 	export default {
 		components:{
-			AppJumbotron
+			AppJumbotron,
+			CardmovieList
 		},
 		data(){
 			return{
+				store,
 				pathBase: '../../public/img/',
 				newMovies: [
 					{
@@ -146,6 +150,26 @@
 				</div>
 			</div>
 		</section>
+		<!-- terza section movie cards  -->
+		<section id="movie-cards">
+			<div class="my-container">
+				<div class="section-header">
+					<h3>New Movie</h3>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesettin</p>
+				</div>
+				<nav class="w-50">
+					<ul>
+						<li v-for="(item,index) in store.mediaCategories" :key="index">
+							<a href="#">{{ item.name }}</a>
+						</li>
+					</ul>
+				</nav>
+				<!-- importo la lista come componete  -->
+				<CardmovieList />
+				
+			</div>
+
+		</section>
 	</main>
 </template>
 
@@ -215,6 +239,19 @@
 					background-color: rgb(15,24,40);
 					span{
 						font-size: 25px;
+					}
+				}
+			}
+		}
+	}
+	// terza section movie cards 
+	section#movie-cards{
+		nav{
+			margin-bottom: 75px;
+			ul{
+				li{
+					a{
+						font-size: 18px;
 					}
 				}
 			}

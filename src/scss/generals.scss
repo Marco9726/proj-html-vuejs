@@ -103,3 +103,47 @@ p {
 	border-left: 2px solid $green-primary;
 	margin-bottom: 4rem;
 }
+
+.my-card {
+	position: relative;
+}
+
+.my-card>div {
+	position: absolute;
+	z-index: 2;
+}
+
+.my-card::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.label {
+	padding: .75rem 1.2rem;
+}
+
+.left-label {
+	left: 0;
+	border-top-right-radius: 2rem;
+	border-bottom-right-radius: 2rem;
+}
+
+.right-label {
+	right: 0;
+	border-top-left-radius: 2rem;
+	border-bottom-left-radius: 2rem;
+}
+
+.bottom-label {
+	bottom: 1.5rem;
+	background-color: $dark;
+}
+
+// .my-card:hover::after {
+// 	background-color: rgba($green-primary, 0.5);
+// }
