@@ -87,6 +87,7 @@
 <template>
 	<main>
 		<AppJumbotron />
+		<!-- PRIMA SECTION  -->
 		<section>
 			<div class="my-container">
 				<div class="section-header">
@@ -113,7 +114,11 @@
 											<img :src="pathBase + item.finalPath" :alt="item.title" class="img-fluid">
 										</div>
 										<div class="movie-info ps-3">
-											<h5>{{ item.title }}</h5>
+												<a href="#">
+													<h5>
+														{{ item.title }}
+													</h5>
+												</a>
 											<h6>{{ item.views }} views</h6>
 											<div class="my-row-between">
 												<span>{{ item.date }}</span>
@@ -122,10 +127,21 @@
 										</div>
 									</div>
 								</li>
-							</ul>
-							
+							</ul>				
 						</div>
-
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- SECONDA SECTTION  -->
+		<section id="coming-soon">
+			<div id="bg-layover" class="w-100 h-100">
+				<div id="coming-info" class="text-center">
+					<h3 class="color-green">COMING SOON MOVIE</h3>
+					<h2>MAX STILL</h2>
+					<div id="actors" class="py-3">
+						<h3 class="mb-4">JON PLAYER <span class="color-green">&amp; </span>EMILY ROSE</h3>
+						<h5>THE COUNTDOWN IS FINISHED!</h5>
 					</div>
 				</div>
 			</div>
@@ -137,7 +153,9 @@
 	@use '../scss/generals.scss' as *;
 	@use '../scss/partials/variables' as *;
 
+	// prima section video e slider 
 	section{
+		margin-top: 85px;
 		.section-header{
 			p{
 				font-size: 16px;
@@ -169,11 +187,38 @@
 						}
 					}
 				}
-			}
-			
+			}	
 		}
-		
 	}
+	// seconda section coming-soon 
+	section#coming-soon{
+		height: 80vh;
+		background-image: url('../../public/img/coming-bg.jpg');
+		background-size: cover;
+		background-position: center;
+		position: relative;
+		#bg-layover{
+			background-color: rgba(15,24,40, 0.5);
 
+			#coming-info{
+				width: 25%;
+				position: absolute;
+				bottom: 50%;
+				left: 50%;
+				transform: translateY(50%);
+				h2{
+					font-size: 5rem;
+					font-weight: 300;
+				}
+
+				#actors{
+					background-color: rgb(15,24,40);
+					span{
+						font-size: 25px;
+					}
+				}
+			}
+		}
+	}
 	
 </style>
