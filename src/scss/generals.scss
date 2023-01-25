@@ -84,3 +84,12 @@ p {
 .dropdown-menu {
 	min-width: 200px;
 }
+
+.green-dot,
+.rounded-pill {
+	background-color: $green-primary;
+}
+
+.rounded-pill {
+	border: none;
+}

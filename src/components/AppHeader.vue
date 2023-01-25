@@ -265,7 +265,6 @@
 					display: inline-block;
 					height: 1.2rem;
 					width: 1.2rem;
-					background-color: $green-primary;
 					font-size: .75rem;
 					border-radius: 50%;
 					text-align: center;

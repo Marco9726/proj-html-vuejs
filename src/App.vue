@@ -1,9 +1,12 @@
 <script>
   import AppHeader from './components/AppHeader.vue';
+  import AppMain from './components/AppMain.vue';
   import AppFooter from './components/AppFooter.vue';
+
   export default {
     components: {
       AppHeader,
+		AppMain,
 		AppFooter
     },
 	 data(){
@@ -116,12 +119,13 @@
 <template>
 	<!-- passo l'array della navbar come prop all'header  -->
   <AppHeader :arraynav="navbar" />
+  <AppMain />
   <!-- passo gli oggetti 'categories' e 'information' come props al footer  -->
   <AppFooter :objectCategories="categories" :objectInformation="information" />
 </template>
 
 <style lang="scss">
   @use './scss/generals.scss' as *;
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
   
 </style>
