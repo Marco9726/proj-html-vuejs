@@ -258,6 +258,7 @@
 			}
 			#cart{
 				position: relative;
+				cursor: pointer;
 				.green-dot{
 					position: absolute;
 					top: -12px;

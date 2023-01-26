@@ -105,6 +105,7 @@ p {
 
 .my-card {
 	position: relative;
+	overflow: hidden;
 }
 
 .my-card>div {
@@ -124,6 +125,7 @@ p {
 
 .label {
 	padding: .75rem 1.2rem;
+	cursor: pointer;
 }
 
 .left-label {
@@ -143,6 +145,43 @@ p {
 	background-color: $dark;
 }
 
-// .my-card:hover::after {
-// 	background-color: rgba($green-primary, 0.5);
-// }
+//EFFETTI HOVER
+.my-card:hover::after {
+	background-color: rgba($green-primary, 0.25);
+	background: linear-gradient(180deg, rgba($green-primary, 0.5) 5%, rgba($secondary, 0.9) 90%);
+}
+
+a:hover,
+i:hover {
+	color: $green-primary !important;
+	transition: color 0.5s ease-in-out;
+
+
+	& * {
+		transition: color 0.5s ease-in-out;
+		color: $green-primary !important;
+	}
+}
+
+.white-hover:hover {
+	background-color: white;
+	transition: all 0.5s ease-in;
+	color: black;
+}
+
+.bottom-label:hover {
+	background-color: $green-primary;
+	transition: background-color 0.5s ease-in;
+}
+
+#social-dots {
+	a:hover {
+		background-color: $secondary !important;
+		transition: all 0.5s ease-in-out;
+	}
+}
+
+.my-card:hover img {
+	transform: scale(1.25);
+	transition: 0.5s all ease-in-out;
+}
