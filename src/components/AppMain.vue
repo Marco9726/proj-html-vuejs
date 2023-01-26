@@ -2,12 +2,14 @@
 	import AppJumbotron from './AppJumbotron.vue';
 	import CardMovieList from './CardMovieList.vue';
 	import CardNewsList from './CardNewsList.vue';
+	import AppForm from './AppForm.vue';
 	import { store } from '../store';
 	export default {
 		components:{
 			AppJumbotron,
 			CardMovieList,
-			CardNewsList
+			CardNewsList,
+			AppForm
 		},
 		data(){
 			return{
@@ -181,6 +183,8 @@
 				<CardNewsList />
 			</div>
 		</section>
+		<!-- FORM  -->
+		<AppForm/>	
 	</main>
 </template>
 

@@ -120,7 +120,7 @@
 				</ul>
 				<div id="cart" class="ms-3">
 					<i class="fa-solid fa-basket-shopping"></i>
-					<span class="green-dot">0</span>
+					<span class="green-dot bg-mygreen">0</span>
 					<!-- dropdown -->
 					<div class="dropdown-menu">
 						No products in the cart.
@@ -268,7 +268,7 @@
 					font-size: .75rem;
 					border-radius: 50%;
 					text-align: center;
-					line-height: 1.2rem;
+					line-height: 1.2rem;	
 				}
 				&:hover{
 					.dropdown-menu{

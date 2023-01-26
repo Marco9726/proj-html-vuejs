@@ -44,7 +44,7 @@
 			<h5>Welcome To Our Movie Site</h5>
 			<h2>OUR SPECIAL <span class="color-green">MOVIES</span></h2>
 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industrioy. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown</p>
-			<button class="rounded-pill">
+			<button class="rounded-pill bg-mygreen">
 				Read More
 			</button>
 		</div>
