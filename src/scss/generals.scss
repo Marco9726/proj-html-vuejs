@@ -10,6 +10,7 @@
 	color: white;
 	font-family: 'Roboto';
 	font-size: 14px;
+	transition: $in-out-4;
 }
 
 ul {
@@ -154,34 +155,49 @@ p {
 a:hover,
 i:hover {
 	color: $green-primary !important;
-	transition: color 0.5s ease-in-out;
-
 
 	& * {
-		transition: color 0.5s ease-in-out;
 		color: $green-primary !important;
+
 	}
 }
 
 .white-hover:hover {
 	background-color: white;
-	transition: all 0.5s ease-in;
 	color: black;
 }
 
 .bottom-label:hover {
 	background-color: $green-primary;
-	transition: background-color 0.5s ease-in;
 }
 
 #social-dots {
 	a:hover {
 		background-color: $secondary !important;
-		transition: all 0.5s ease-in-out;
 	}
 }
 
 .my-card:hover img {
 	transform: scale(1.25);
-	transition: 0.5s all ease-in-out;
+}
+
+#movie-cards {
+	.movie-category {
+		position: relative;
+
+		&:after {
+			content: "";
+			width: 0px;
+			height: 1px;
+			left: 0;
+			background: $green-primary;
+			position: absolute;
+			bottom: -2px;
+			transition: width 0.4s ease-in-out;
+		}
+
+		&:hover:after {
+			width: 100%;
+		}
+	}
 }

@@ -184,8 +184,8 @@
 					display: inline-block;
 					#select{
 						padding-left: 2.5rem;
+						transition: 0;
 						&:focus{
-							outline-style: round($number: 2);
 							outline: 1px solid $green-primary;
 						}
 						span{

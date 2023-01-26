@@ -18,7 +18,6 @@
 		<section id="background">
 			<div id="layover" class="w-100 h-100">
 				<div class="my-container">
-
 					<div class="my-row-between">
 						<div class="col-3 pe-4">
 							<div class="title">	
