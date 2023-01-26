@@ -1,11 +1,13 @@
 <script>
 	import AppJumbotron from './AppJumbotron.vue';
-	import CardmovieList from './CardMovieList.vue';
+	import CardMovieList from './CardMovieList.vue';
+	import CardNewsList from './CardNewsList.vue';
 	import { store } from '../store';
 	export default {
 		components:{
 			AppJumbotron,
-			CardmovieList
+			CardMovieList,
+			CardNewsList
 		},
 		data(){
 			return{
@@ -150,7 +152,7 @@
 				</div>
 			</div>
 		</section>
-		<!-- terza section movie cards  -->
+		<!-- TERZA SECTION MOVIE CARDS  -->
 		<section id="movie-cards">
 			<div class="my-container">
 				<div class="section-header">
@@ -164,11 +166,20 @@
 						</li>
 					</ul>
 				</nav>
-				<!-- importo la lista come componete  -->
-				<CardmovieList />
-				
+				<!-- importo la lista movie come componete  -->
+				<CardMovieList />	
 			</div>
-
+		</section>
+		<!-- QUARTA SECTION NEWS  -->
+		<section id="news">
+			<div class="my-container">
+				<div class="section-header">
+					<h3>Latest News</h3>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesettin</p>
+				</div>
+				<!-- importo la lista news come componente -->
+				<CardNewsList />
+			</div>
 		</section>
 	</main>
 </template>

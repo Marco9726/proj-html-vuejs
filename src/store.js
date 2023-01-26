@@ -31,12 +31,12 @@ export const store = reactive({
 			date: 'April 14, 2020'
 		},
 		{
-			title: 'consequat Nam lectus nibh aucibus It has turpis',
+			title: 'Consequat Nam Lectus Nibh Aucibus It Has Turpis',
 			image: "../../public/img/blog2-570x570.jpg",
 			date: 'April 14, 2020'
 		},
 		{
-			title: 'Nam lectus nibh consequat aucibus turpis',
+			title: 'Nam Lectus Nibh Consequat Aucibus Turpis',
 			image: "../../public/img/blog3-570x570.jpg",
 			date: 'April 14, 2020'
 		},
