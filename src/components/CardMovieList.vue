@@ -1,6 +1,9 @@
 <script>
 	import  CardMovie from './CardMovie.vue'
 	export default {
+		props:{
+			categorySelected: String
+		},
 		components:{
 			CardMovie
 		},
@@ -69,14 +72,26 @@
 					}
 				]
 			}
+		},
+		computed:{
+			// metodo per filtrare l'array in base alla categoria selezionata 
+			availableMovies(){
+				// se non è vera la categoria o se è uguale a 'All', restituisco l'array originale 
+				if(!this.categorySelected || this.categorySelected === 'All'){
+					return this.movieCardsArray
+				}
+				// altrimenti filtro l'array solo con gli oggetti che hanno la categoria uguale a quella selezionata 
+				return this.movieCardsArray.filter(item => item.category === this.categorySelected)
+			}
 		}
+		
 	}
 </script>
 
 <template>
 	<div class="my-row-between flex-wrap">
-		<!-- ciclo gli oggetti dell'array movieCardsArray e passo l'oggetto (card) come prop alla componente CardMovie  -->
-		<CardMovie v-for="(item,index) in movieCardsArray" :key="index" :card="item" />
+		<!-- ciclo gli oggetti dell'array della funziona avaibleMovies e passo l'oggetto (card) come prop alla componente CardMovie  -->
+		<CardMovie v-for="(item,index) in availableMovies" :key="index" :card="item" />
 	</div>
 </template>
 

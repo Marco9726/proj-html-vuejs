@@ -10,7 +10,6 @@
 	color: white;
 	font-family: 'Roboto';
 	font-size: 14px;
-	transition: $in-out-4;
 }
 
 ul {
@@ -43,6 +42,17 @@ button:not(#select) {
 
 p {
 	line-height: 24px;
+}
+
+button,
+img,
+li,
+.label,
+#send,
+i,
+a,
+a * {
+	transition: $in-out-4;
 }
 
 // CLASSI 
@@ -153,6 +163,7 @@ p {
 }
 
 a:hover,
+.movie-category:hover,
 i:hover {
 	color: $green-primary !important;
 

@@ -13,6 +13,7 @@
 		},
 		data(){
 			return{
+				categorySelected: '',
 				store,
 				pathBase: '../../public/img/',
 				newMovies: [
@@ -163,13 +164,13 @@
 				</div>
 				<nav class="w-50">
 					<ul>
-						<li v-for="(item,index) in store.mediaCategories" :key="index" class="movie-category">
-							<a href="#">{{ item.name }}</a>
+						<li v-for="(item,index) in store.mediaCategories" :key="index" class="movie-category" @click="categorySelected=item.name">
+							{{ item.name }}
 						</li>
 					</ul>
 				</nav>
-				<!-- importo la lista movie come componete  -->
-				<CardMovieList />	
+				<!-- importo la lista movie come componete e gli passo la prop della categoria selezionata -->
+				<CardMovieList :category-selected="categorySelected" />	
 			</div>
 		</section>
 		<!-- QUARTA SECTION NEWS  -->
@@ -265,9 +266,8 @@
 			margin-bottom: 75px;
 			ul{
 				li.movie-category{
-					a{
-						font-size: 18px;
-					}
+					cursor: pointer;
+					font-size: 18px;			
 				}
 			}
 		}
